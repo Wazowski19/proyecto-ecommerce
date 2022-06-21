@@ -1,9 +1,12 @@
 import express from 'express';
 import config from './config/index.js';
+import {userRoutes} from './routes/index.js'
 
 const api = express();
 
 api.use(express.json());
+
+api.use(userRoutes)
 
 api.use((err, req, res, next) => {
     if (
