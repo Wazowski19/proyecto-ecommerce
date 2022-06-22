@@ -6,6 +6,12 @@ const api = express();
 
 api.use(express.json());
 
+api.get('/status', (req, res) => {
+  return res.json({
+    msg: 'Api funcionando',
+  });
+});
+
 api.use(userRoutes)
 
 api.use((err, req, res, next) => {
