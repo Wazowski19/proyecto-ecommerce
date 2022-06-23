@@ -1,7 +1,7 @@
 import express from 'express';
 import config from './config/index.js';
-import {userRoutes} from './routes/index.js';
-import { productRoutes } from './routes/index.js';
+import {userRoutes, productRoutes, orderRoutes} from './routes/index.js';
+
 
 const api = express();
 
@@ -15,6 +15,7 @@ api.get('/status', (req, res) => {
 
 api.use(userRoutes)
 api.use(productRoutes)
+api.use(orderRoutes)
 
 api.use((err, req, res, next) => {
     if (
