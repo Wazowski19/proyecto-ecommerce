@@ -22,7 +22,7 @@ export const searchProduct = async (req, res) =>{
     try {
         const product = await productSchema.find(data);
 
-        if(!product ){
+        if(product.length === 0){
             return res.status(404).json({
                 msg: `Productos no encontrado`
             });
