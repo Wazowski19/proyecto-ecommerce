@@ -47,6 +47,7 @@ export const login = async (req, res) =>{
         {
             user,
             expDate,
+            rol,
         },
         process.env.JWT_SECRET
         );
